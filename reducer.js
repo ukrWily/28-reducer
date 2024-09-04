@@ -2,11 +2,15 @@ const initialState = [];
 
 function reducer(state, action) {
   switch (action.type) {
-    case value:
-      break;
+    case "ADD_NAME":
+      return [...state, action.payload];
+    case "DELETE_NAME":
+      return state.filter((personName) => personName !== action.payload);
+    case "CLEAR_NAMES":
+      return [];
 
     default:
-      break;
+      return state;
   }
   //
   // if (action.type === "ADD_NAME") {
